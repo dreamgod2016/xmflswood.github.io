@@ -13,13 +13,13 @@
       .type('/**', '<span class="note">')
       .type('0', '<br>')
       .type('00', '<span class="blank">')
-      .type('今天wood先生教你写代码呀', '<span class="note">')
+      .type('今天小居居教你写代码呀', '<span class="note">')
       .type('0', '<br>')
       .type('00', '<span class="blank">')
       .wait(10)
-      .type('等下。。。', '<span class="note">') 
+      .type('首先，最最重要的是~', '<span class="note">') 
       .wait(10)
-      .type('么么哒~o(*≧▽≦)ツ', '<span class="note">', 0)
+      .type('来个么么哒~o(*≧▽≦)ツ', '<span class="note">', 0)
       .wait(10)
       .then(() => {
         memeda()
@@ -52,10 +52,7 @@
       .type('boy', '<span class="gray">')
       .type(':', '<span class="blue">')
       .type('0', '<span class="blank">')
-      .type("'wood'", '<span class="green">')
-      .wait(15)
-      .del(6)
-      .type("'洪榕森'", '<span class="green">')
+      .type("'帅松鹅'", '<span class="green">')
       .type(',', '<span class="gray">')
       .type('0', '<br>')
       // 珊珊
@@ -63,7 +60,7 @@
       .type('girl', '<span class="gray">')
       .type(':', '<span class="blue">')
       .type('0', '<span class="blank">')
-      .type("'黄珊珊'", '<span class="green">')
+      .type("'妮含小姐姐=。='", '<span class="green">')
       .type(',', '<span class="gray">')
       .type('0', '<br>')
       // time
@@ -71,7 +68,7 @@
       .type('start', '<span class="gray">')
       .type(':', '<span class="blue">')
       .type('0', '<span class="blank">')
-      .type("'2017-07-10'", '<span class="green">')
+      .type("'2017-08-31'", '<span class="green">')
       .type('0', '<br>')
       .type('00', '<span class="blank">')
       .type('}', '<span class="gray">')
@@ -213,6 +210,7 @@
     // let heartBg = document.querySelector('#heartBg')
     let foot = document.querySelector('.foot')
     let send = document.querySelector('#send')
+    //监听点击事件
     send.addEventListener('click', () => {
       stars()
     })
@@ -225,7 +223,8 @@
     }, 2000)
   }
   function count() {
-    const date = new Date('2017/07/10 00:00:00')
+    //一个重要滴日子。
+    const date = new Date('2017/08/31 13:48:00')
     let end = new Date()
     let seconds = (Date.parse(end) - Date.parse(date)) / 1000
     let days = Math.floor(seconds / (3600 * 24))
@@ -234,9 +233,11 @@
     let numAnim = new CountUp("count", 0, days, 0, 5)
     numAnim.start()
   }
+  //点击后的事件
   function stars() {
     let send = document.querySelector('#send')
     send.setAttribute('disabled', '')
+    //设置一个延迟，防止多次点击。
     setTimeout(() => {
       send.removeAttribute('disabled')
     }, 2000)
@@ -250,23 +251,40 @@
       img.setAttribute('class', 'stars')
       startsContainer.appendChild(img)
     }
+    //这里有点想改了。
     let comments = document.querySelectorAll('.comment')
-    let comentsLength = 0
+    //let replys = document.querySelectorAll('.reply')
+    //let comentsLength = 0
+    if(comments.length <= 7)
+    {
+          let comment = document.createElement('div')
+          comment.className = 'comment'
+          comment.style.bottom = 135 + comentsLength *2* 55 + 'px'
+          comment.innerHTML = '我想你了~'
+          document.body.appendChild(comment)
+          
+          let reply = document.createElement('div')
+          reply.className = 'reply'
+          reply.style.bottom = 80 + comentsLength *2* 55 + 'px'
+          reply.innerHTML = '我也想你了~mua~'
+          document.body.appendChild(reply)
+    }
+    /*
     if (comments) {
+      //两个长度是一样的
       comentsLength = comments.length
+      //超过7次就清零。
       if (comentsLength > 7) {
+
+        
         for(let i = 0; i < comentsLength; i++) {
           comments[i].remove()
+          replys[i].remove()
         }
         comentsLength = 0
       }
     }
-    let comment = document.createElement('div')
-    comment.className = 'comment'
-    comment.style.bottom = 80 + comentsLength * 55 + 'px'
-    comment.innerHTML = '我想你了'
-    document.body.appendChild(comment)
-    
+*/
     document.body.appendChild(startsContainer)
     let els = document.querySelectorAll('.startsContainer')
     let current = els.length

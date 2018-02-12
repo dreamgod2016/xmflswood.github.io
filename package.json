@@ -4,10 +4,10 @@
   "description": "valentine's",
   "main": "index.js",
   "scripts": {
-    "server": "export NODE_ENV=dev && webpack-dev-server --open",
-    "build": "export NODE_ENV=pro && webpack"
+    "server": "set NODE_ENV=dev && webpack-dev-server --open",
+    "build": "set NODE_ENV=pro && webpack"
   },
-  "author": "xmflswood",
+  "author": "松鹅",
   "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.26.0",

@@ -165,7 +165,7 @@ span {
 #timer > span {
   color: white;
   font-weight: bold;
-  font-size: 0.8rem;
+  font-size: 0.6rem;
   text-shadow: 0 8px 9px #c4b59d, 0px -2px 1px #fff;
 }
 /* 动画展示区域 */
