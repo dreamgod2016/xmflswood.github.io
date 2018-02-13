@@ -254,8 +254,9 @@
     //这里有点想改了。
     let comments = document.querySelectorAll('.comment')
     //let replys = document.querySelectorAll('.reply')
-    //let comentsLength = 0
-    if(comments.length <= 7)
+    let comentsLength = comments.length
+    console.log(comments.length)
+    if(!comments||comments.length <= 7)
     {
           let comment = document.createElement('div')
           comment.className = 'comment'
