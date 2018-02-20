@@ -1,4 +1,11 @@
+## 情人节
+
+去掉了生日模块、修改了部分逻辑如气泡产生过多的处理、新增了回复的bubble，根据自己的情况写了一段python的情话~
+
+------
+
 ## Happy Valentine's Day
+
 <p><a href="http://黄珊珊.com">demo</a></p>
 
 A gift for my lover.
